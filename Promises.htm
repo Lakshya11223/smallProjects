@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <ul id = 'list'>
+        <!-- echo "# JsPracticeProject" >> README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/Lakshyadeep11223/JsPracticeProject.git
+        git push -u origin main -->
+    </ul>
+    <script>
+        let select = document.getElementById('list')
+        fetch('https://api.freeapi.app/api/v1/public/randomproducts')
+        .then((response)=>{  
+            response
+            .json()
+            .then( (obj)=>{
+                const prop = obj.data.data
+                console.log(prop)
+                prop.forEach(element => {
+                    const li = document.createElement('li')
+                    li.innerText = element.title
+                    select.appendChild(li)
+                    
+                });
+
+
+            })
+        })
+        .catch((err)=> {
+            // const lii = document.createElement('li')
+            // lii.innerText = "Error in feching"
+            // list.appendChild(lii)
+            
+           })
+        .finally( ()=>  {    })
+       
+
+
+    </script>
+</body>
+</html>
