@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f9fc;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.task-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+}
+
+.add-button {
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-text {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.complete-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #95a5a6;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.delete-button:hover {
+  opacity: 1;
+}
+
+.empty-list {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
+}
+
+.task-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+  </style>
+  <body>
+    <h1>Task List</h1>
+
+    <div class="task-form">
+      <input
+        type="text"
+        id="taskInput"
+        class="task-input"
+        placeholder="Add a new task..."
+      />
+      <button type="button" id="addButton" class="add-button">Add</button>
+    </div>
+
+    <ul id="taskList" class="task-list">
+      <li id="emptylist" class="empty-list">Add Here</li>
+    </ul>
+
+    <div class="task-stats">
+      <span id="totalTasks">Total tasks: <span id="num">0</span> </span>
+      <span id="completedTasks">Completed: <span id="num1">0</span></span>
+    </div>
+    <script src="task_list.js"></script>
+  </body>
+</html>
