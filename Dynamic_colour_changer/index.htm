@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      button{
+        padding:5px 15px;
+        margin: 10px;
+        border-radius: 3px;
+        background-color: rgb(47, 92, 239);
+        color:white
+      }
+      #color{
+        width:120px;
+        height:30px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 1px black ;
+        margin:10px;
+        
+      }
+      #text {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 24px;
+      }
+      
+      
+    </style>
+</head>
+
+<body id="body">
+  <div>
+   <label for="color" id="text"> Select a color</label>
+   <select id="color" >   
+    <option>Red</option>
+    <option>Green</option>
+    <option>Blue</option>
+    <option>yellow</option>
+   </select>
+   <button type="button" id="btn">Add</button>
+  </div>
+  <div>
+   <ul id="list">
+
+   </ul>
+  </div>
+  <script src="script.js"></script>
+ 
+    
+</body>
+</html>
