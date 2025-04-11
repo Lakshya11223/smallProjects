@@ -1,11 +1,11 @@
 let boardData = {};
 
-// Utility to generate unique IDs
+
 function generateId() {
     return '_' + Math.random().toString(36);
 }
 
-// Load saved board data
+
 window.onload = function () {
     const saved = localStorage.getItem("kanban");
     if (saved) {
@@ -74,7 +74,7 @@ function renderBoards() {
     }
 }
 
-// Create task element
+
 function createTaskElement(text, id) {
     const task = document.createElement("div");
     task.className = "items";
@@ -85,7 +85,7 @@ function createTaskElement(text, id) {
     return task;
 }
 
-// Drag and drop logic
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -105,7 +105,7 @@ function drop(ev) {
         boardData[board] = boardData[board].filter(t => t.id !== id);
     }
 
-    // Add to new board
+   
     const text = task.textContent;
     boardData[newBoard].push({ id, text });
 
@@ -113,7 +113,7 @@ function drop(ev) {
     renderBoards(); // re-render for accurate DOM
 }
 
-// Add new board
+
 document.getElementById("btn2").addEventListener("click", function () {
     const name = prompt("Enter board name:");
     if (name && !boardData[name]) {
