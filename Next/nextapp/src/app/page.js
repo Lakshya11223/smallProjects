@@ -2,9 +2,9 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='h-screen w-screen flex justify-center items-center'
-    >
-      <h1 className='font-bold'
+    <div className='h-screen w-screen flex justify-center items-center '
+    > 
+      <h1 className='font-bold pt-20 text-xl' 
       >Welcome to Tourist Guide</h1>
     </div>
   )
