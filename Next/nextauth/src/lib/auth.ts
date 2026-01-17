@@ -69,7 +69,7 @@ const authoptions:NextAuthOptions={
    pages:{
     signIn:'/login',
     error:'/login'
-   }
+   },
 
    secret:process.env.NEXT_AUTH_SECRET,
 }
