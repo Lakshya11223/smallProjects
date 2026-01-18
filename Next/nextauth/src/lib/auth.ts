@@ -1,6 +1,6 @@
 import { NextAuthOptions } from "next-auth"
 import  CredentialsProvider  from "next-auth/providers/credentials"
-import Connectdb from "./db"
+import {Connectdb} from "./db"
 import User from "@/app/model/user.model"
 import bcrypt from "bcryptjs"
 
@@ -71,7 +71,7 @@ const authoptions:NextAuthOptions={
     error:'/login'
    },
 
-   secret:process.env.NEXT_AUTH_SECRET,
+   secret:process.env.NEXTAUTH_SECRET,
 }
 
 export default authoptions

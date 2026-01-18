@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 interface Iuser{
     name:string,
     email:string,
-    password:string,
+    password?:string,
     image?:string,
     createdAt:string,
     updatedAt:string

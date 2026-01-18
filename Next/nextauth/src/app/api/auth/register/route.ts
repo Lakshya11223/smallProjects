@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import bcrypt from "bcryptjs"
-import Connectdb from "@/lib/db"
+import { Connectdb } from "@/lib/db"
 import User from "@/app/model/user.model"
 
 export async function POST(req: NextRequest) {
@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     await Connectdb() 
 
     const { name, email, password } = await req.json()
-
+    console.log({name,email,password});
     const userpresent = await User.findOne({ email }) 
     if (userpresent) {
       return NextResponse.json(
