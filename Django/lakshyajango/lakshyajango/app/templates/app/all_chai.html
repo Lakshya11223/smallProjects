@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+All Chai
+{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl ">All God</h1>
+<div class="grid grid-cols-3 gap-4 m-4 ">
+
+
+{% for chai in chais %}
+    <div class="flex flex-col justify-center items-center ">
+        <img src="{{chai.image.url}}" class="rounded-xl max-h-100 shadow-xl"/>
+        <h1>{{chai.name}}</h1>
+       <a href="{% url 'order' chai.id %}"
+   class="w-full block rounded-lg
+          bg-orange-800 text-white cursor-pointer p-3
+          text-lg font-medium text-center
+          hover:bg-orange-700
+          active:bg-orange-900
+          transition-colors duration-150
+          focus:outline-none focus:ring-2 focus:ring-orange-400">
+    {{ chai.type }} - {{ chai.id }}
+</a>
+</div>
+{% endfor %}
+</div>
+{% endblock  %}
